@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --header-height: 3rem;
+
+  --hue: 0;
+  --sat: 0%;
+  --title-color: hsl(var(--hue), var(--sat), 20%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --text-color: hsl(var(--hue), var(--sat), 46%);
+  --body-color: hsl(var(--hue), var(--sat), 98%);
+  --container-color: #fff;
+  --modern-blue: #55BCC9;
+  --another-blue: #118d9e;
+
+  --body-font: "Poppins", sans-serif;
+
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --big-font-size: 2.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+.section__title{
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  margin-bottom: 20px; /* Adjust this value to ensure proper spacing between the title and subtitle */
+}
+
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 4rem;
+}
+.section__subtitle .highlight {
+    color: var(--modern-blue);
+  }
+
+.highlight {
+    color: var( --another-blue);
+  }
+  
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.container {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    height: 100vh; /* Optional: Take up the full viewport height */
+    text-align: center; /* Center the text */
+  }
+  
+
+.grid {
+  display: grid;
+  gap: 1.5rem; 
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--title-color);
+  color: var(--container-color);
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-weight: var(--font-medium);
+}
+
+.button:hover {
+  background-color: var(--title-color-dark);
+}
+
+.button__icon {
+  margin-left: var(--mb-0-5);
+}
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+
+  .button {
+    padding: 1rem 1.75rem;
+  }
+
+  .button__icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+
+  .section__subtitle {
+    display: flex; /* Use flexbox for this element */
+    justify-content: center; /* Center content */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+}
+
+@media screen and (max-width: 350px) {
+  :root {
+    --big-font-size: 2.25rem;
+  }
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
+
+nav {
+    width: 100%; /* Full width */
+    position: sticky; /* Stick to the top when you scroll */
+    top: 0; /* Align to the top */
+    z-index: var(--z-fixed); /* Ensure it stays above other content */
+  }
+  
+  nav ul {
+    display: flex; /* Display the navigation items in a row */
+    justify-content: center; /* Center the navigation items */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style-type: none; /* Remove list styling */
+  }
+  
+  nav li {
+    padding: var(--mb-0-75); /* Add some padding for clickable area */
+  }
+  
+  nav a {
+    color: var(--text-color); /* Text color for nav links */
+    text-decoration: none; /* Remove underline from links */
+    padding: var(--mb-0-5); /* Padding for the links */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+  }
+  
+  nav a:hover,
+  nav a.active {
+    color: var(--title-color-dark); /* Text color on hover/active */
+  }
+
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh; /* Make the home section take the full viewport height */
+    text-align: center; /* Center the text */
+    padding: var(--mb-2); /* Add some padding */
+  }
+  
+  .section__title {
+    font-size: calc(var(--big-font-size) * 1.5); /* Significantly increase the font size */
+    margin-bottom: var(--mb-1);
+    display: inline-block; /* This makes max-width effective */
+  }
+  
+  .section__subtitle {
+    font-size: calc(var(--h1-font-size) * 1); /* Increase the font size for the subtitle */
+    max-width: 55%; /* Adjust this as needed */
+    display: block; /* Change to block if it's not already */
+    margin: 0 auto; /* Auto margins for horizontal centering */
+  }
+  .profile-image {
+    border-radius: 50%; /* This creates the circular shape */
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    margin-right: 20px; /* Adds some space between the image and the title */
+    object-fit: cover; /* This will make sure the image covers the area nicely */
+}
+
+
+
+#experience{
+    .section__title {
+        font-size: var(--h1-font-size); /* Original font size */
+        color: var(--title-color); /* Original color */
+        /* Remove any added max-width or display properties that were changed */
+      }
+      
+      .section__subtitle {
+        /* Revert back to original styles */
+        font-size: var(--small-font-size); /* Original font size */
+        color: var(--text-color); /* Original color */
+        /* Ensure it is centered */
+        text-align: center; /* Center the text */
+        display: block; /* Display as block */
+        margin: 0 auto; /* Center it within its container */
+        margin-bottom: var(--mb-2); /* Original bottom margin */
+      }
+      
+      /* Ensure the container is styling content as it was originally */
+      .container {
+        /* Original container styles */
+        max-width: 650px; /* Maximum width of the container */
+        margin-left: auto; /* Center the container */
+        margin-right: auto; /* Center the container */
+        /* Remove flexbox properties if they were added */
+      }
+}
+.education-item, .skills-list {
+    background-color: var(--container-color); /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 2rem; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: var(--mb-2); /* Margin at the bottom */
+    max-width: 800px; /* Maximum width of the box */
+    margin-left: auto; /* Centering the box */
+    margin-right: auto; /* Centering the box */
+}
+
+.education-item h3, .skills-list li {
+    font-weight: var(--font-medium); /* Medium font weight for titles and list items */
+    color: var(--title-color-dark); /* Darker color for text */
+    margin-bottom: var(--mb-1); /* Spacing between items */
+}
+
+.skills-list {
+    list-style: none; /* Remove default list styling */
+    padding-left: 0; /* Remove default padding */
+}
+
+/* You may want to adjust the list style for skills to make it more visual */
+.skills-list li::before {
+    content: '•'; /* Bullet point */
+    color: var(--modern-blue); /* Modern blue color for bullets */
+    font-weight: bold; /* Bold bullet points */
+    display: inline-block; 
+    width: 1em; /* Fixed width for alignment */
+}
+
+.projects-grid {
+    margin-top: 20px;
+    display: flex; /* Use flexbox for a horizontal layout */
+    justify-content: space-around; /* Space out the items evenly */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line on smaller screens */
+  }
+  
+  .project-item {
+    flex-basis: calc(33.333% - 2rem); /* Take up one-third of the container width, accounting for padding */
+    margin: 1rem; /* Spacing around each item */
+    text-align: center; /* Center the text beneath the image */
+  }
+  
+  .project-image {
+    width: 100%; /* Make the image responsive to its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for the images */
+  }
+  
+  .project-description {
+    font-size: var(--small-font-size); /* Small font size for descriptions */
+    margin-top: var(--mb-0-5); /* Spacing between image and description */
+    color: var(--text-color); /* Text color */
+    padding: 0 1rem; /* Padding on the sides */
+  }
