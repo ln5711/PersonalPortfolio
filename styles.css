@@ -10,8 +10,9 @@
   --text-color: hsl(var(--hue), var(--sat), 46%);
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
-  --modern-blue: #55BCC9;
+  --modern-blue: #2bb9cc;
   --another-blue: #118d9e;
+  --another-blue2: #50aeba;
 
   --body-font: "Poppins", sans-serif;
 
@@ -365,3 +366,25 @@ nav {
     color: var(--text-color); /* Text color */
     padding: 0 1rem; /* Padding on the sides */
   }
+  .btn {
+    display: inline-block;
+    padding: 12px 25px; /* Slightly larger padding for a bigger button */
+    margin-top: 10px;
+    background-color: var(--another-blue2); /* Ensure you define this variable in your :root or simply use a hex color code */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: 'Arial', sans-serif; /* Modern font, but you can choose another */
+}
+
+.btn:hover, .btn:focus {
+    background-color: darken(var(--another-blue2), 10%); /* Darken function doesn't work in plain CSS, use a darker shade of your button color instead */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover for a "lifted" effect */
+    outline: none; /* Removes the outline on focus to keep the design clean */
+}
