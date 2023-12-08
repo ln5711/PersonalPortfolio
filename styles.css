@@ -388,3 +388,77 @@ nav {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover for a "lifted" effect */
     outline: none; /* Removes the outline on focus to keep the design clean */
 }
+
+.contact-form {
+    ax-width: 100%; /* Allow the form to expand to its container's width */
+    width: 400px; /* Set the desired width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.btn-github {
+    background-color: #ff7f00;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.btn-github:hover {
+    background-color: #c86b0e; /* GitHub's hover color */
+}
+
+.btn-linkedin {
+    background-color: #0077B5; /* LinkedIn's blue color */
+    color: #fff;
+    margin-top: 30px;
+}
+
+.btn-linkedin:hover {
+    background-color: #04669a; /* LinkedIn's hover color */
+    margin-top: 10px;
+}
+
+.contactme {
+    font-size: 3rem; /* Adjust the font size as needed */
+    color: hsl(var(--hue), var(--sat), 20%); /* Set the text color to black */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 10px;
+}
